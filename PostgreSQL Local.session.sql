@@ -65,5 +65,27 @@ select depertment_id ,avg(salary) as avg_salary
 from employee
 group by depertment_id;
 
---Filtering Grouped Data (HAVING)
+--delete all inserted value
+DELETE FROM employee;
 
+INSERT INTO employee(employee_id, first_name, last_name, email, salary, depertment_id)
+VALUES 
+(1, 'Jane', 'Smith', 'jane.smith@gmail.com', 75000.00, 1),
+(2, 'Bob', 'Johnson', 'bob.j@gmail.com', 60000.00, 2),
+(3, 'Alice', 'Williams', 'alice.w@gmail.com', 85000.00, 1),
+(4, 'David', 'Brown', 'david.b@gmail.com', 95000.00, 4),
+(5, 'Sarah', 'Davis', 'sarah.d@gmail.com', 52000.00, 2),
+(6, 'Michael', 'Miller', 'mike.m@gmail.com', 72000.00, 1),
+(7, 'Emily', 'Wilson', 'emily.w@gmail.com', 68000.00, 3),
+(8, 'Sarah', 'Davis', 'devis@gmail.com', 52000.00, 4),
+(9, 'joael', 'Miller', 'niike.m@gmail.com', 72000.00, 3);
+
+--The HAVING clause filters the results of a GROUP BY based on aggregate conditions.
+select depertment_id ,avg(salary) as avg_salary
+from employee
+group by depertment_id
+having avg(salary)>60000;
+
+-- The ORDER BY clause sorts your final result set in Ascending (ASC) or Descending (DESC) order.   
+select * from employee 
+order by salary desc;
