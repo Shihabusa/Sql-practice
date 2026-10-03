@@ -89,3 +89,5 @@ having avg(salary)>60000;
 -- The ORDER BY clause sorts your final result set in Ascending (ASC) or Descending (DESC) order.   
 select * from employee 
 order by salary desc;
+
+today we will learn  new things about the join in sql.
